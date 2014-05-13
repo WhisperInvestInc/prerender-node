@@ -189,6 +189,11 @@ prerender.plainResponse = function(response, callback) {
 
 prerender.buildApiUrl = function(req) {
   var prerenderUrl = prerender.getPrerenderServiceUrl();
+
+  if (req.url.match(/\/posts/g)) {
+       prerenderUrl =   process.env.CRAWLER_POSTS_SERVICE_URL;
+  }
+
   var forwardSlash = prerenderUrl.indexOf('/', prerenderUrl.length - 1) !== -1 ? '' : '/';
 
   var protocol = req.protocol;
