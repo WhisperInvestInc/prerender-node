@@ -33,6 +33,7 @@ prerender.crawlerUserAgents = [
    'yahoo',
    'bingbot',
   'baiduspider',
+  'bitlybot',
   'facebookexternalhit',
   'twitterbot',
   'rogerbot',
