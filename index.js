@@ -42,7 +42,8 @@ prerender.crawlerUserAgents = [
   'bufferbot',
   'quora link preview',
   'showyoubot',
-  'outbrain'
+  'outbrain',
+  'Mozilla/5.0 (compatible; X11; Linux x86_64; Google-StructuredDataTestingTool; +http://www.google.com/webmasters/tools/richsnippets)'
 ];
 
 
