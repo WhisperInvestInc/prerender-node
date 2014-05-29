@@ -191,7 +191,7 @@ prerender.plainResponse = function(response, callback) {
 prerender.buildApiUrl = function(req) {
   var prerenderUrl = prerender.getPrerenderServiceUrl();
 
-  if (req.url.match(/\/posts/g) || req.url.match(/\/research/g))) {
+  if (req.url.match(/\/posts/g) || req.url.match(/\/research/g)) {
        prerenderUrl =   process.env.CRAWLER_POSTS_SERVICE_URL;
   }
 
