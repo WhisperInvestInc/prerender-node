@@ -43,7 +43,10 @@ prerender.crawlerUserAgents = [
   'quora link preview',
   'showyoubot',
   'outbrain',
-  'Mozilla/5.0 (compatible; X11; Linux x86_64; Google-StructuredDataTestingTool; +http://www.google.com/webmasters/tools/richsnippets)'
+  'Mozilla/5.0 (compatible; X11; Linux x86_64; Google-StructuredDataTestingTool; +http://www.google.com/webmasters/tools/richsnippets)',
+  'Crowsnest',
+  'MetaURI',
+  'AddThis.com'
 ];
 
 
