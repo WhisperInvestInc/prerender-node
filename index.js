@@ -97,6 +97,11 @@ prerender.whitelisted = function(whitelist) {
   return this;
 };
 
+prerender.broomboneUrlsList = function(broomboneUrls) {
+    prerender.broomboneUrls = typeof broomboneUrls === 'string' ? [broomboneUrls] : broomboneUrls;
+    return this;
+};
+
 
 prerender.blacklisted = function(blacklist) {
   prerender.blacklist = typeof blacklist === 'string' ? [blacklist] : blacklist;
@@ -141,7 +146,7 @@ prerender.shouldShowPrerenderedPage = function(req) {
 
 prerender.getPrerenderedPageResponse = function(req, callback) {
   var options = {
-	  uri: url.parse(prerender.buildApiUrl(req))
+    uri: url.parse(prerender.buildApiUrl(req))
   };
   if(this.prerenderToken || process.env.PRERENDER_TOKEN) {
     options.headers = {
@@ -151,7 +156,7 @@ prerender.getPrerenderedPageResponse = function(req, callback) {
     };
   }
 
-	request.get(options).on('response', function(response) {
+  request.get(options).on('response', function(response) {
     if(response.headers['content-encoding'] && response.headers['content-encoding'] === 'gzip') {
       prerender.gunzipResponse(response, callback);
     } else {
@@ -195,9 +200,16 @@ prerender.plainResponse = function(response, callback) {
 prerender.buildApiUrl = function(req) {
   var prerenderUrl = prerender.getPrerenderServiceUrl();
 
-  if (req.url.match(/\/posts/g) || req.url.match(/\/research/g)) {
-       prerenderUrl =   process.env.CRAWLER_POSTS_SERVICE_URL;
+  if (this.broomboneUrls.some(function(broomboneUrl){return (new RegExp(broomboneUrl)).test(req.url) === true})) {
+      console.log("use broombone");
+      prerenderUrl = prerender.getPrerenderServiceUrl();
+  } else {
+      console.log("use crawler");
+      prerenderUrl =   process.env.CRAWLER_POSTS_SERVICE_URL;
   }
+//  if (req.url.match(/\/posts/g) || req.url.match(/\/research/g)) {
+//       prerenderUrl =   process.env.CRAWLER_POSTS_SERVICE_URL;
+//  }
 
   var forwardSlash = prerenderUrl.indexOf('/', prerenderUrl.length - 1) !== -1 ? '' : '/';
 
