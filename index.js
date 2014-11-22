@@ -47,7 +47,8 @@ prerender.crawlerUserAgents = [
   'Crowsnest',
   'MetaURI',
   'AddThis.com',
-  'disqus'
+  'disqus',
+  'redditbot'
 ];
 
 
