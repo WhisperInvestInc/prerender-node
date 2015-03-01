@@ -48,7 +48,8 @@ prerender.crawlerUserAgents = [
   'MetaURI',
   'AddThis.com',
   'disqus',
-  'redditbot'
+  'redditbot',
+  'yandex'
 ];
 
 
