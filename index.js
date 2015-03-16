@@ -49,7 +49,8 @@ prerender.crawlerUserAgents = [
   'AddThis.com',
   'disqus',
   'redditbot',
-  'yandex'
+  'yandex',
+  'Swiftbot'
 ];
 
 
