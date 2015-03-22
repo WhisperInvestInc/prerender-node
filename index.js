@@ -29,7 +29,7 @@ var prerender = module.exports = function(req, res, next) {
 // we support _escaped_fragment_ and want to ensure people aren't
 // penalized for cloaking.
 prerender.crawlerUserAgents = [
-   'googlebot',
+   'google',
    'yahoo',
    'bingbot',
   'baiduspider',
