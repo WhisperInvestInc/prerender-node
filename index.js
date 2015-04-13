@@ -50,7 +50,8 @@ prerender.crawlerUserAgents = [
   'disqus',
   'redditbot',
   'yandex',
-  'Swiftbot'
+  'Swiftbot',
+  'msnbot'
 ];
 
 
