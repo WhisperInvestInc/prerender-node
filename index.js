@@ -51,7 +51,8 @@ prerender.crawlerUserAgents = [
   'redditbot',
   'yandex',
   'Swiftbot',
-  'msnbot'
+  'msnbot',
+  'baiduspider'
 ];
 
 
